@@ -1,47 +1,60 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:600,700"
-      rel="stylesheet"
-    />
-    <title>A simple calculator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Calculator</title>
+
+    <!-- calculator.css -->
+    <link rel="stylesheet" href="calculator.css" />
   </head>
   <body>
-    <div id="container">
-      <div id="calculator">
-        <div id="result">
-          <div id="history">
-            <p id="history-value"></p>
-          </div>
-          <div id="output">
-            <p id="output-value"></p>
+    <div class="wrapper">
+      <div class="calculator">
+        <div class="calculator-header">
+          <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+              <input type="checkbox" id="checkbox" />
+              <div class="slider round"></div>
+            </label>
           </div>
         </div>
-        <div id="keyboard">
-          <button class="operator" id="clear">C</button>
-          <button class="operator" id="backspace">CE</button>
-          <button class="operator" id="%">%</button>
-          <button class="operator" id="/">&#247;</button>
-          <button class="number" id="7">7</button>
-          <button class="number" id="8">8</button>
-          <button class="number" id="9">9</button>
-          <button class="operator" id="*">&times;</button>
-          <button class="number" id="4">4</button>
-          <button class="number" id="5">5</button>
-          <button class="number" id="6">6</button>
-          <button class="operator" id="-">-</button>
-          <button class="number" id="1">1</button>
-          <button class="number" id="2">2</button>
-          <button class="number" id="3">3</button>
-          <button class="operator" id="+">+</button>
-          <button class="empty" id="empty"></button>
-          <button class="number" id="0">0</button>
-          <button class="empty" id="empty"></button>
-          <button class="operator" id="=">=</button>
+        <div class="calculator-body">
+          <div style="text-align: right;">
+            <h1 id="output">0</h1>
+            <p id="input"></p>
+          </div>
+        </div>
+        <div class="calculator-footer">
+          <div class="symbol" onclick="calculate('C')"><span>C</span></div>
+          <div class="symbol" onclick="calculate('AC')"><span>AC</span></div>
+          <div class="symbol" onclick="calculate('%')"><span>%</span></div>
+          <div class="symbol" onclick="calculate('/')"><span>/</span></div>
+          <div onclick="calculate('7')"><span>7</span></div>
+          <div onclick="calculate('8')"><span>8</span></div>
+          <div onclick="calculate('9')"><span>9</span></div>
+          <div onclick="calculate('*')" class="symbol"><span>x</span></div>
+          <div onclick="calculate('4')"><span>4</span></div>
+          <div onclick="calculate('5')"><span>5</span></div>
+          <div onclick="calculate('6')"><span>6</span></div>
+          <div onclick="calculate('-')" class="symbol"><span>-</span></div>
+          <div onclick="calculate('1')"><span>1</span></div>
+          <div onclick="calculate('2')"><span>2</span></div>
+          <div onclick="calculate('3')"><span>3</span></div>
+          <div onclick="calculate('+')" class="symbol"><span>+</span></div>
+          <div onclick="calculate('0')"><span>0</span></div>
+          <div onclick="calculate('00')"><span>00</span></div>
+          <div onclick="calculate('.')"><span>.</span></div>
+          <div onclick="calculate('=')" class="symbol-dark"><span>=</span></div>
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Math.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.1/math.js"></script>
+
+    <!-- calculator.js -->
+    <script src="calculator.js"></script>
   </body>
 </html>
